@@ -10,6 +10,27 @@
 
 Create a new environment  
 
+- For Windows  
+
+```
+python -m venv venv
+```  
+
+- For Mac
+
 ```
 python3 -m venv venv
+```  
+
+Activate the new virtual environment  
+
+- For Mac  
+
+```
+source venv/bin/activate
+```  
+- For windows  
+
+```
+.\venv\Scripts\activate
 ```
