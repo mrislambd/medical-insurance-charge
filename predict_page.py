@@ -14,14 +14,14 @@ def prediction():
     regions = ("northeast", "northwest", "southeast", "southwest")
 
     # Input fields
-    age = st.number_input(label="Age", min_value=18,
+    age = st.number_input(label="Age: minimum 18 years and maximum 100 years old", min_value=18,
                           max_value=100, step=1, value=25)
-    sex = st.selectbox("Sex", gender)
-    bmi = st.number_input("BMI", min_value=15.0,
+    sex = st.selectbox("Gender: male or female", gender)
+    bmi = st.number_input("BMI: Body Mass Index", min_value=15.0,
                           max_value=60.0, step=0.1, value=25.5)
-    children = st.selectbox("Children", child)
+    children = st.selectbox("Children: Number of Children", child)
     smoker = st.selectbox("Smoker", smoke)
-    region = st.selectbox("Region", regions)
+    region = st.selectbox("Region:", regions)
 
     pred_button = st.button("Predict Charges")
 
