@@ -1,6 +1,6 @@
-FROM python:3.9-slim
-COPY . /app
+FROM python:3.9
+EXPOSE 8080
 WORKDIR /app
-RUN pip3 install -r requirements.txt
-EXPOSE $PORT
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app 
+COPY . ./
+RUN pip install -r requirements.txt
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]
