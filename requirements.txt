@@ -3,3 +3,5 @@ sklearn
 pandas
 matplotlib
 pandas
+statsmodels
+seaborn
