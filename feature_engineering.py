@@ -5,13 +5,11 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 class FeatureEngineering(BaseEstimator, TransformerMixin):
     def __init__(self):
-        # Initialize OneHotEncoder for 'smoker' and 'sex'
         self.ohe_smoker_sex = OneHotEncoder(
             drop='first', dtype=int, sparse_output=False)
         self.label_encoder = LabelEncoder()
 
     def fit(self, X, y=None):
-        # Fit the OneHotEncoder on smoker and sex
         self.ohe_smoker_sex.fit(X[['smoker', 'sex']])
         self.label_encoder.fit(X['region'])
         return self
@@ -19,10 +17,18 @@ class FeatureEngineering(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
 
+        # Ensure the correct data types
+        X['age'] = pd.to_numeric(X['age'], errors='coerce')
+        X['bmi'] = pd.to_numeric(X['bmi'], errors='coerce')
+        X['smoker'] = X['smoker'].astype(str)
+        X['sex'] = X['sex'].astype(str)
+        X['region'] = X['region'].astype(str)
+
         # Apply OneHotEncoder to 'smoker' and 'sex'
         smoker_sex_encoded = self.ohe_smoker_sex.transform(
             X[['smoker', 'sex']])
-        smoker_sex_columns = ['smoker_yes', 'sex_male']
+        smoker_sex_columns = self.ohe_smoker_sex.get_feature_names_out([
+                                                                       'smoker', 'sex'])
 
         # Create DataFrame for encoded variables and merge with original data
         smoker_sex_df = pd.DataFrame(
