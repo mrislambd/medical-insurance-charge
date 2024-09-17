@@ -6,3 +6,4 @@ pandas
 statsmodels
 seaborn
 streamlit
+streamlit_navigation_bar
