@@ -5,7 +5,7 @@ import numpy as np
 
 
 def prediction():
-    st.title('Medical Insurance Charge Prediction ')
+    st.title('MI Charge Predictor ')
     st.write("### Input the customer information")
 
     gender = ("male", "female")
