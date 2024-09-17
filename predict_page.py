@@ -5,8 +5,8 @@ import numpy as np
 
 
 def prediction():
-    st.title('Medical Insurance Charge Prediction')
-    st.write("### Input the customer information")
+    st.title(':orange[Medical Insurance Charge Prediction ]')
+    st.write("### :orange[Input the customer information]")
 
     gender = ("male", "female")
     smoke = ("yes", "no")
@@ -14,16 +14,16 @@ def prediction():
     regions = ("northeast", "northwest", "southeast", "southwest")
 
     # Input fields
-    age = st.number_input(label="Age: minimum 18 years and maximum 100 years old", min_value=18,
+    age = st.number_input(label=":orange[Age: minimum 18 years and maximum 100 years old]", min_value=18,
                           max_value=100, step=1, value=25)
-    sex = st.selectbox("Gender: male or female", gender)
-    bmi = st.number_input("BMI: Body Mass Index", min_value=15.0,
+    sex = st.selectbox(":orange[Gender: male or female]", gender)
+    bmi = st.number_input(":orange[BMI: Body Mass Index]", min_value=15.0,
                           max_value=60.0, step=0.1, value=25.5)
-    children = st.selectbox("Children: Number of Children", child)
-    smoker = st.selectbox("Smoker", smoke)
-    region = st.selectbox("Region:", regions)
+    children = st.selectbox(":orange[Children: Number of Children]", child)
+    smoker = st.selectbox(":orange[Smoker]", smoke)
+    region = st.selectbox(":orange[Region]", regions)
 
-    pred_button = st.button("Predict Charges")
+    pred_button = st.button(":green[Predict Charges]")
 
     if pred_button:
         # Convert inputs to appropriate data types

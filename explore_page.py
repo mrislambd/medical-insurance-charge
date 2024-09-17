@@ -14,10 +14,10 @@ df = data_load()
 
 
 def show_explore_page():
-    st.title("Explore the data distribution and interaction")
+    st.title(":orange[Explore the data distribution and interaction]")
     st.write(
         """
-        ### Data Visualization 
+        ### :orange[Data Visualization]
         """
     )
     insurance = df
@@ -59,8 +59,8 @@ def show_explore_page():
 
     st.write(
         """
-            ### Relationship of the features and target  
-            #### Smoking Habit and BMI effect on Charges
+            ### :orange[Relationship of the features and target]  
+            #### :orange[Smoking Habit and BMI effect on Charges]
             """
     )
     fig2, axes = plt.subplots(1, 2, figsize=(9.5, 4))
@@ -91,7 +91,7 @@ def show_explore_page():
     st.pyplot(fig2)
     st.write(
         """
-            #### Regional Location and Age effect on Charges
+            #### :orange[Regional Location and Age effect on Charges]
             """
     )
 
@@ -110,7 +110,7 @@ def show_explore_page():
     st.pyplot(fig3)
     st.write(
         """
-            #### Number of Children and Gender effect on Charges
+            #### :orange[Number of Children and Gender effect on Charges]
             """
     )
 
@@ -130,7 +130,7 @@ def show_explore_page():
 
     st.write(
         """
-            #### Combined effect of all features on charges
+            #### :orange[Combined effect of all features on charges]
             """
     )
     plt.figure(figsize=(12, 6))
